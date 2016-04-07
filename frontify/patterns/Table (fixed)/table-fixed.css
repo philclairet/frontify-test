@@ -1,0 +1,250 @@
+$NOTHS_2_SEMIBOLD_FONT_FAMILY: "NOTHS Sans No2 SemiBold", sans-serif;
+$NOTHS_3_FONT_FAMILY: "NOTHS Sans No3 Regular", sans-serif;
+
+$HORIZONTAL_SPACING: 12px;
+$VERTICAL_SPACING_MEDIUM: 12px;
+$VERTICAL_SPACING_LARGE: 16px;
+
+$default-font: $NOTHS_3_FONT_FAMILY;
+$default-font-size: 12px;
+$default-top-spacing: $HORIZONTAL_SPACING;
+
+$table-head-font: $NOTHS_2_SEMIBOLD_FONT_FAMILY;
+$table-head-spacing: $VERTICAL_SPACING_MEDIUM;
+
+$table-foot-background-color: $SECONDARY;
+$table-foot-height: 60px;
+$table-foot-vertical-spacing: $VERTICAL_SPACING_MEDIUM;
+$table-foot-horizontal-spacing: $HORIZONTAL_SPACING_MEDIUM;
+
+$table-body-spacing: $VERTICAL_SPACING_MEDIUM;
+
+$table-cell-link-font: $NOTHS_3_FONT_FAMILY;
+
+$list-item-spacing: $VERTICAL_SPACING_LARGE;
+
+$table-cell-subheader-font: $NOTHS_2_SEMIBOLD_FONT_FAMILY;
+
+$table-cell-indicator-color: $INSTRUCTION;
+
+$default-text-color: $STANDARD_TEXT;
+$background-color: $SECONDARY;
+$hover-backgroud-color: $LIGHT_BLUE;
+$border-color: $BORDER;
+$warn-bg-color: $WARNING;
+$empty-cell-font-color: $BORDER_GRAY;
+$empty-row-background-color: $INFO_DOMINANT_COLOR;
+$selected-row-background-color: $LIGHT_BLUE;
+$selected-row-border-color: $ACTION_COLOR;
+
+.table, .table-flex {
+  table-layout: fixed;
+  color: $default-text-color;
+  text-align: left;
+  font: $default-font-size $default-font;
+  background-color: $background-color;
+  margin-top: $default-top-spacing;
+  position: relative;
+  line-height: 16px;
+  border-collapse: collapse;
+}
+
+.table--head, .table--head-flex {
+  font-family: $table-head-font;
+  text-transform: uppercase;
+}
+
+.table--head--row, .table--head--row-flex {
+  border-top: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+  border-bottom: 2px solid $border-color;
+}
+
+.table--head--cell, .table--head--cell-flex {
+  padding: $table-head-spacing;
+  border-left: 1px solid $border-color;
+  vertical-align: top;
+
+  &:hover {
+    background-color: $hover-backgroud-color;
+  }
+}
+
+.table--body, .table--body-flex, .table--body-flex-and-foot {
+  border-bottom: 1px solid $border-color;
+}
+
+.table--body--row, .table--body--row-flex {
+  border-top: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+
+  &:hover {
+    background-color: $hover-backgroud-color;
+  }
+}
+
+.table--body--cell, .table--body--cell-flex {
+  padding: $table-body-spacing;
+  border-left: 1px solid $border-color;
+  vertical-align: top;
+}
+
+/* flex table */
+
+.table-flex {
+  table-layout: auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.table--head-flex {
+  display: -webkit-flex;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  -webkit-flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.table--head--row-flex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.table--head--cell-flex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.table--body-flex, .table--body-flex-and-foot {
+  overflow: auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.table--body--row-flex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.table--body--cell-flex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.table--body-flex-and-foot {
+  padding-bottom: $table-foot-height - 1px;
+}
+
+.table--row-selected {
+  background-color: $selected-row-background-color;
+  border-left: 5px solid $selected-row-border-color;
+}
+
+.table--cell-empty-options {
+  background-color: $empty-row-background-color;
+  padding-right: 35px;
+  text-align: right;
+}
+
+.table--cell-empty {
+  color: $empty-cell-font-color;
+}
+
+.table--cell--list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.table--cell--list--item + .table--cell--list--item {
+  margin-top: $list-item-spacing;
+}
+
+.table--cell--list--item--header {
+  font-family: $table-cell-subheader-font;
+}
+
+.table--cell--indicator {
+  color: $table-cell-indicator-color;
+}
+
+.table--foot {
+  position: absolute;
+  bottom: 0;
+  border: 1px solid $border-color;
+  line-height: 26px;
+  background-color: rgba(255,255,255, 0.7);
+  height: $table-foot-height;
+  padding: $table-foot-vertical-spacing $table-foot-horizontal-spacing;
+  padding: 0;
+  font-size: 14px;
+  width: 100%;
+}
+
+.table--foot--item {
+  padding: 16px;
+  display: inline-block;
+}
+
+.table--cell--header {
+  margin-bottom: 12px;
+}
+
+.table--txt-field {
+  width: 100%;
+  font: 14px $default-font;
+  padding: $table-head-spacing / 2;
+  border-width: 1px;
+  border-color: rgb(204, 204, 204);
+  border-style: solid;
+  background-color: $SECONDARY;
+  height: 28px;
+}
+
+.table--txt-field-warn {
+  border-color: $warn-bg-color;
+}
+
+.table--cell-no-padding {
+  padding: 3px;
+}
+
+.table--cell-no-padding--text {
+  margin: $table-head-spacing - 3;
+}
+
+.table--header-text {
+  display: inline-block;
+  margin-right: 18px;
+}
+
+.table--header-icon {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  top: 50%;
+  margin-top: -5px;
+}
+
+.table--header-icon-unfocused {
+  opacity: .3;
+}

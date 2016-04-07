@@ -1,0 +1,55 @@
+$standard_text_color: $STANDARD_TEXT_COLOR;
+
+.loading {
+  width: 300px;
+  text-align: center;
+  padding-top: 10px;
+  margin: 0 auto 23px;
+  color: $standard_text_color;
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 0px auto;
+  }
+
+  .double-bounce1,
+  .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: $PRIMARY;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: bounce 2s infinite ease-in-out;
+  }
+
+  .double-bounce2 {
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}

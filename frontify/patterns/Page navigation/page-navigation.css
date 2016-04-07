@@ -1,0 +1,116 @@
+$navigation-height: 58px;
+$navigation_bg: $PRIMARY_DARKER;
+$navigation_color: $WHITE;
+
+$title-font-family: "NOTHS Sans No3 Regular", sans-serif;
+$title-font-size: 26px;
+$title-font-color: $SECONDARY;
+
+$tab-item-color: $SECONDARY;
+$tab-item-font-family: "NOTHS Sans No2 SemiBold", sans-serif;
+$tab-item-font-size: 14px;
+
+$tab-active-color: $STANDARD_TEXT;
+$tab-active-bg: $PRIMARY_BG;
+
+$spacing: 16px;
+
+$standard_text_color: $STANDARD_TEXT_COLOR;
+$active-tab-yellow: $URGENT;
+
+.navigation {
+  background: $navigation_bg;
+  color: $navigation_color;
+  padding: 0;
+  margin: 0 auto;
+  height: $navigation-height;
+
+  display: block;
+  position: relative;
+}
+
+.navigation--header, .navigation--tabs, .search-box, .navigation--header--menu, .navigation--header--brand, .navigation--header--link {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.navigation--header, .navigation--tabs, .search-box {
+  //vertical-align: middle;
+}
+
+
+.navigation--header--brand {
+  padding: $spacing;
+  font-family: $title-font-family;
+  font-size: $title-font-size;
+  line-height: $title-font-size;
+  color: $title-font-color;
+  margin: 0;
+}
+
+.navigation--header--link {
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 14px;;
+  margin: ($navigation-height - 14px) / 2;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.navigation--tabs {
+  padding: 0;
+  margin: 0 $spacing;
+  font-size: 0;
+  font-family: $tab-item-font-family;
+  position:absolute;
+  right: 0;
+
+  text-align: right;
+}
+
+.navigation--tabs--item, .navigation--tabs--item--active {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.navigation--tabs--item {
+  text-decoration: none;
+  padding: 0;
+  margin: 0 4px;
+  font-size: $tab-item-font-size;
+
+  .navigation--tabs--item--link {
+    text-decoration: none;
+    color: $tab-item-color;
+    display: inline-block;
+    line-height: $tab-item-font-size;
+    padding: ((($navigation-height - $tab-item-font-size) / 2) - 4)
+             10px
+            ((($navigation-height - $tab-item-font-size) / 2) - 4)
+             10px;
+  }
+  .navigation--tabs--item--link:hover {
+    text-decoration: underline;
+  }
+}
+
+.navigation--tabs--item--active {
+  text-decoration: none;
+  background: $tab-active-bg;
+  color: $standard_text_color;
+  padding: 0;
+
+  .navigation--tabs--item--link {
+    background: $tab-active-bg;
+    color: $tab-active-color;
+    border-top: 4px solid $active-tab-yellow;
+    padding: ((($navigation-height - $tab-item-font-size) / 2) - 4)
+             10px
+            (((($navigation-height - $tab-item-font-size) / 2) - 4) + 4px + 16px)
+             10px;
+  }
+  .navigation--tabs--item--link:hover {
+    text-decoration: none;
+  }
+}

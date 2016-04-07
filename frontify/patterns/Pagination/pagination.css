@@ -1,0 +1,35 @@
+$default-font-size: 14px;
+$default-font: "NOTHS Sans No3 Regular", sans-serif;
+$selected-text: $STANDARD_TEXT;
+$primary-color: $PRIMARY;
+
+.pagination {
+  display: inline-block;
+  font: $default-font-size $default-font;
+}
+
+.pagination--list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pagination--list--item {
+  display: inline-block;
+  color: $primary-color;
+  padding: 0 8px;
+}
+
+.pagination--list--item--icon {
+  font-size: 9px;
+}
+
+.pagination--list--item-selected {
+  display: inline-block;
+  color: $selected-text;
+  padding: 0 8px;
+}
+
+.pagination--list--item--link {
+  text-decoration: none;
+  color: $primary-color;
+}
