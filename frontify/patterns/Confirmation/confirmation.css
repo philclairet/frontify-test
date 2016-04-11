@@ -1,0 +1,95 @@
+$alert-info-color: $INFO;
+$alert-success-color: $SUCCESS;
+$alert-error-color: $ERROR;
+$alert-warn-color: $WARNING;
+$alert-bg-color: $SECONDARY;
+
+.alert {
+  border-left: 4px solid;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  padding: 16px 16px 16px 46px;
+  position: relative;
+
+  > .icon {
+    left: 16px;
+    top: 16px;
+    position: absolute;
+  }
+}
+
+.alert-with-margin {
+  margin: 20px;
+}
+
+.alert__btn {
+  margin-left: 8px;
+}
+
+.alert--title {
+  margin-top: 0px;
+  font-family: "NOTHS Sans No2 SemiBold";
+}
+
+.alert__btn-group {
+  float: none;
+  margin-top: 22px;
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.alert__text, .alert > p.alert__text {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.alert__list {
+  list-style: none;
+  margin-top: 8px;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-left: 1em;
+}
+
+.alert__list-item {
+  margin: 2px 0 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:before {
+    display: inline-block;
+    content: "-";
+    width: 1em;
+    margin-left: -1em;
+  }
+}
+
+.alert--title {
+  text-transform: uppercase;
+}
+
+@mixin alert-theme($color) {
+  background-color: $alert-bg-color;
+  color: $color;
+  border-color: $color;
+  padding-right: 16px;
+}
+
+.alert-info {
+  @include alert-theme($alert-info-color);
+}
+
+.alert-success {
+  @include alert-theme($alert-success-color);
+}
+
+.alert-error {
+  @include alert-theme($alert-error-color);
+}
+
+.alert-warn {
+  @include alert-theme($alert-warn-color);
+}

@@ -17,10 +17,10 @@ $primary-color: $PRIMARY;
   display: inline-block;
   color: $primary-color;
   padding: 0 8px;
-}
-
-.pagination--list--item--icon {
-  font-size: 9px;
+  
+  i {
+    font-size: 10px;
+  }
 }
 
 .pagination--list--item-selected {
@@ -29,7 +29,12 @@ $primary-color: $PRIMARY;
   padding: 0 8px;
 }
 
-.pagination--list--item--link {
+.pagination--list--item a {
   text-decoration: none;
   color: $primary-color;
+  cursor: pointer;
+  
+  &:hover {
+    text-decoration: underline;
+  }
 }

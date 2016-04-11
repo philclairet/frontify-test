@@ -1,13 +1,13 @@
 $navigation-height: 58px;
-$navigation_bg: $PRIMARY_DARKER;
-$navigation_color: $WHITE;
+$navigation_bg: $PRIMARY_DARK;
+$navigation_color: $SECONDARY;
 
 $title-font-family: "NOTHS Sans No3 Regular", sans-serif;
 $title-font-size: 26px;
 $title-font-color: $SECONDARY;
 
 $tab-item-color: $SECONDARY;
-$tab-item-font-family: "NOTHS Sans No2 SemiBold", sans-serif;
+$tab-item-font-family: "NOTHS Sans No2 Semibold", sans-serif;
 $tab-item-font-size: 14px;
 
 $tab-active-color: $STANDARD_TEXT;
@@ -44,18 +44,19 @@ $active-tab-yellow: $URGENT;
   font-family: $title-font-family;
   font-size: $title-font-size;
   line-height: $title-font-size;
-  color: $title-font-color;
   margin: 0;
 }
 
 .navigation--header--link {
   text-decoration: underline;
   font-size: 14px;
-  line-height: 14px;;
+  line-height: 14px;
   margin: ($navigation-height - 14px) / 2;
   background: transparent;
   border: 0;
   padding: 0;
+  color: $SECONDARY;
+  font-family: $title-font-family;
 }
 
 .navigation--tabs {
@@ -90,9 +91,6 @@ $active-tab-yellow: $URGENT;
             ((($navigation-height - $tab-item-font-size) / 2) - 4)
              10px;
   }
-  .navigation--tabs--item--link:hover {
-    text-decoration: underline;
-  }
 }
 
 .navigation--tabs--item--active {
@@ -111,6 +109,5 @@ $active-tab-yellow: $URGENT;
              10px;
   }
   .navigation--tabs--item--link:hover {
-    text-decoration: none;
   }
 }
