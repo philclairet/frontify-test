@@ -1,0 +1,106 @@
+$NOTHS_2_SEMIBOLD_FONT_FAMILY: "NOTHS Sans No2 SemiBold", sans-serif;
+$NOTHS_3_FONT_FAMILY: "NOTHS Sans No3 Regular", sans-serif;
+$OVERLAY_SHADOW: 0px 3px 4px 0px rgba(0, 0, 0, 0.16);
+$OVERLAY:  rgba($SECONDARY, 0.3);
+
+$overlay_bg: $OVERLAY;
+$overlay_shadow: $OVERLAY_SHADOW;
+$header-title-font: $NOTHS_2_SEMIBOLD_FONT_FAMILY;
+$label-font: 14px $NOTHS_2_SEMIBOLD_FONT_FAMILY;
+$txt-field-font: 14px $NOTHS_3_FONT_FAMILY;
+$text-color: $STANDARD_TEXT_COLOR;
+$separator: $BORDER;
+
+.modal {
+  display:block;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: $overlay_bg;
+}
+
+.modal--dialog {
+  position: fixed;
+  top:50%;
+  left:50%;
+  width: 400px; 
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  border-radius:2px;
+  box-shadow: $overlay_shadow;
+  background: #ffffff;
+}
+
+.modal--header {
+  padding:16px;
+  border-bottom: 1px solid $separator;
+}
+
+.modal--title{
+  font-family: $header-title-font;
+  line-height: 22px;
+  font-size: 18px;
+}
+
+.modal--footer {
+  border-top: 1px solid $separator;
+  padding:16px;
+  font-family: $header-title-font;
+  line-height: 22px;
+  font-size: 18px;
+}
+
+.modal--content {
+  padding: 16px;
+  overflow: hidden;
+}
+
+.modal--label {
+  display: block;
+  margin: 16px 0 8px 0;
+  font: $label-font;
+  color: $text-color;
+}
+
+.modal--txt-field {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  font: $txt-field-font;
+  color: $text-color;
+
+  padding: 4px;
+  border-width: 1px;
+  border-color: rgb(204, 204, 204);
+  border-style: solid;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 1px 1.732px 1px 0px rgba(0, 0, 0, 0.15);
+  height: 28px;
+  line-height: 19px;
+}
+
+.modal--pwd-field {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  font: $txt-field-font;
+  color: $text-color;
+
+  padding: 4px;
+  border-width: 1px;
+  border-color: rgb(204, 204, 204);
+  border-style: solid;
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 1px 1.732px 1px 0px rgba(0, 0, 0, 0.15);
+  height: 28px;
+  line-height: 19px;
+}
+
+.modal--btn-group {
+  width: 100%;
+  display: block;
+  margin: 0 0;
+  text-align:right;
+}
