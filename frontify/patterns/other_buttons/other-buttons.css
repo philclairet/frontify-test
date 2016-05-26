@@ -1,0 +1,31 @@
+$warning-btn-color: $WARNING;
+$warning-btn-color-light: $WARNING_LIGHT;
+$warning-btn-color-secondary: $SECONDARY;
+
+$success-btn-color: $SUCCESS;
+$success-btn-color-light: $SUCCESS_LIGHT;
+$success-btn-color-secondary: $SECONDARY;
+
+$info-btn-color: $INFO;
+$info-btn-color-light: $INFO_LIGHT;
+$info-btn-color-secondary: $SECONDARY;
+
+$error-btn-color: $ERROR;
+$error-btn-color-light: $ERROR_LIGHT;
+$error-btn-color-secondary: $SECONDARY;
+
+.btn-warning {
+  @include btn-theme($warning-btn-color, $warning-btn-color-light, $warning-btn-color-secondary, $btn-color-disabled);
+}
+
+.btn-error {
+  @include btn-theme($error-btn-color, $error-btn-color-light, $error-btn-color-secondary, $btn-color-disabled);
+}
+
+.btn-info {
+  @include btn-theme($info-btn-color, $info-btn-color-light, $info-btn-color-secondary, $btn-color-disabled);
+}
+
+.btn-success {
+  @include btn-theme($success-btn-color, $success-btn-color-light, $success-btn-color-secondary, $btn-color-disabled);
+}

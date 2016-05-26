@@ -1,0 +1,81 @@
+$default-font: "NOTHS Sans No3 Regular", sans-serif;
+$default-font-size: 14px;
+$warn-font-color: $WARNING_LIGHT;
+$warn-bg-color: $WARNING;
+$error-font-color: $ERROR_LIGHT;
+$error-bg-color: $ERROR;
+$result-bg-color: $BORDER;
+$result-color: $STANDARD_TEXT;
+
+.tooltip {}
+
+.tooltip-fluid {
+  position: relative;
+  margin-top: 16px;
+  padding: 12px;
+  font: $default-font-size $default-font;
+
+  &:after {
+    bottom: 100%;
+    left: 16px;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: 8px;
+    margin-left: -8px;
+  }
+}
+
+.tooltip-inline {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 8px;
+  margin-left: 13px;
+
+  display:inline-block;
+
+  &:after {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(225, 232, 237, 0);
+    border-right-color: #e1e8ed;
+    border-width: 15px;
+    margin-top: -15px;
+  }
+}
+
+.tooltip--result {
+  background: $result-bg-color;
+  color: $result-color;
+}
+
+
+.tooltip--warn {
+  background: $warn-bg-color;
+  color: #ffffff;
+
+  &:after {
+    border-color: rgba(255, 102, 67, 0);
+    border-bottom-color: $warn-bg-color;
+  }
+}
+
+.tooltip--error {
+  background: $error-bg-color;
+  color: #ffffff;
+
+  &:after {
+    border-color: rgba(215, 83, 97, 0);
+    border-bottom-color: $error-bg-color;
+  }
+}

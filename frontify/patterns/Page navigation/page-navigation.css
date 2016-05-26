@@ -57,6 +57,7 @@ $active-tab-yellow: $URGENT;
   padding: 0;
   color: $SECONDARY;
   font-family: $title-font-family;
+  cursor: pointer;
 }
 
 .navigation--tabs {
@@ -91,6 +92,9 @@ $active-tab-yellow: $URGENT;
             ((($navigation-height - $tab-item-font-size) / 2) - 4)
              10px;
   }
+  .navigation--tabs--item--link:hover {
+    text-decoration: underline;
+  }
 }
 
 .navigation--tabs--item--active {
@@ -108,6 +112,9 @@ $active-tab-yellow: $URGENT;
             (((($navigation-height - $tab-item-font-size) / 2) - 4) + 4px + 16px)
              10px;
   }
+  
   .navigation--tabs--item--link:hover {
+    cursor: text;
+    text-decoration: none;
   }
 }

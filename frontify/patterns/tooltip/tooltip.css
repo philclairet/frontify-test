@@ -1,0 +1,58 @@
+/*Frontify hack*/
+body { min-height:200px; position: relative; }
+
+.tooltip-overlay {
+    position: absolute;
+    margin: 20px;
+    background-color: transparent;
+    z-index: 1;
+    cursor: default;
+    background-color: rgba(67,67,67,0.9);
+    padding: 16px;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.16);
+    color: #fff;
+    font-size: 14px;
+    font-family: "NOTHS Sans No3 Regular","Helvetica Neue","HelveticaNeue",Arial,sans-serif;
+    display: inline-block;
+  
+    /*need a button to close the tooltip?*/
+    .btn-right { float: right; }
+}
+
+/*position the tooltip*/
+.tooltip-overlay--left-bottom-aligned {
+    left: 0;
+    bottom: -5px;
+}
+
+.tooltip-overlay--right-bottom-aligned {
+    right: 0;
+    bottom: -5px;
+}
+
+@mixin tooltip-orientation($bg-color, $border-top, $border-right, $border-bot, $border-left, $pos-top, $pos-right, $pos-bot, $pos-left) {
+  height: 0;
+  width: 0;
+  
+  content: "";
+    
+  position: absolute;
+  top: $pos-top;
+  right: $pos-right;
+  bottom: $pos-bot;
+  left: $pos-left;
+  
+  border-top: $border-top solid transparent;
+  border-right: $border-right solid $bg-color;
+  border-bottom: $border-bot solid transparent;
+  border-left: $border-left solid $bg-color;
+}
+
+.tooltip-overlay--left-bottom-aligned:before {
+    @include tooltip-orientation(rgba(67,67,67,0.9), 8px, 10px, 8px, 0px, inherit, inherit, 5px, -10px);
+}
+
+.tooltip-overlay--right-bottom-aligned:before {
+    @include tooltip-orientation(rgba(67,67,67,0.9), 8px, 0px, 8px, 10px, inherit, -10px, 5px, inherit);
+}
