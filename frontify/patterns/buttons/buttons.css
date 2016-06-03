@@ -1,0 +1,183 @@
+$btn-font-family: 'NOTHS Sans No2 SemiBold', sans-serif;
+
+$btn-font-size: 12px;
+$btn-large-font-size: 15px;
+
+$btn-color-disabled: $DISABLED;
+
+$btn-color-primary: $PRIMARY;
+$btn-color-secondary: $SECONDARY;
+$btn-color-hover: $PRIMARY-LIGHT;
+
+$btn-color-info: $INFO;
+$btn-color-info-hover: $INFO-LIGHT;
+
+$btn-color-success: $SUCCESS;
+$btn-color-success-hover: $SUCCESS-LIGHT;
+
+$btn-color-warning: $WARNING;
+$btn-color-warning-hover: $WARNING-LIGHT;
+
+$btn-color-critical: $ERROR;
+$btn-color-critical-hover: $ERROR-LIGHT;
+
+$border-radius: 2px;
+$border-width: 1px;
+
+$btn-height: 29px;
+$btn-large-height: 35px;
+
+$btn-v-padding:0;
+$btn-h-padding:10px;
+
+/*.btn-group {
+  display: block;
+  position: relative;
+  margin:0 0 8px;
+  
+  .btn, .btn-large { 
+    margin: 0 8px 0 0;
+    float:left;
+    
+    &.btn-right {
+      margin: 0 0 0 8px; 
+    }
+  }
+}*/
+
+
+
+@mixin btn-theme ($bg-color, $border-color, $font-color, $bg-color-hover, $border-color-hover, $font-color-hover){
+  color: $font-color;
+  border-radius:$border-radius;
+  border-width: $border-width;
+  border-color: $border-color;
+  background-color: $bg-color;
+  font-family: $btn-font-family;
+  
+  margin:0 0 8px;
+  padding:0;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: uppercase;
+  border-style: solid;
+  text-decoration: none;
+  letter-spacing: 0;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  
+  i.icon {
+    margin: 0 $btn-h-padding 0 0;
+    &.icon-chevron-down {
+      margin: 0 0 0 $btn-h-padding;
+      font-size: 12px;
+    }
+  }
+  
+  &:nth-last-child(3){ 
+    /* for split dd buttons, square off 
+    the edges and remove outer right border */
+
+    border-radius: 2px 0 0 2px;
+    border-right: 0;
+    float:left;
+  }
+  
+  &.btn-split-dd {
+    &+button { 
+      display:none;
+    }
+    padding: 0 8px;
+    border-radius: 0 2px 2px 0;
+    border-left: 1px solid $font-color;
+    &:hover {
+      border-left-color: $font-color;
+    }
+    
+    i.icon {
+      margin: 0;
+    }
+  }
+  
+  &:hover {
+    background-color: $bg-color-hover;
+    border-color: $border-color-hover;
+    color: $font-color-hover;
+  }
+
+  &:focus{
+    outline: none;
+    background-color: $color-light;
+    border-color: $color-light;
+    color: $secondary;
+  }
+
+  &:active {
+    background-color: $color-light;
+    border-color: $color-light;
+    box-shadow: inset 0px 2px 4px 0px rgba(0,0,0,0.16);
+  }
+}
+
+@mixin btn-disabled($font-color, $bg-color, $border-color){
+   &.is-disabled,
+   &[disabled],
+   &.is-disabled:hover,
+   &[disabled]:hover {
+    color: $font-color;
+    background-color: $bg-color;
+    border-color: $border-color;
+    cursor: default;
+  }
+}
+
+@mixin btn-size($v-padding, $h-padding, $font-size, $btn-height){
+  padding: $v-padding $h-padding;
+  font-size: $font-size;
+  height: $btn-height;
+  line-height: $btn-height;
+}
+
+/*********************/
+/*** BUTTON THEMES ***/
+/*********************/
+
+.btn-primary {
+  @include btn-theme($btn-color-primary, $btn-color-primary, $btn-color-secondary, $btn-color-hover, $btn-color-hover, $btn-color-secondary);
+  @include btn-disabled($primary-btn-color-secondary, $btn-color-disabled, $btn-color-disabled);
+}
+
+.btn-secondary {
+  @include btn-theme($btn-color-secondary, $btn-color-primary, $btn-color-primary, $btn-color-hover, $btn-color-hover, $btn-color-secondary);
+  @include btn-disabled($btn-color-disabled, $btn-color-secondary, $btn-color-disabled);
+}
+
+.btn-info {
+    @include btn-theme($btn-color-info, $btn-color-info, $btn-color-secondary, $btn-color-info-hover, $btn-color-info-hover, $btn-color-secondary);
+}
+
+.btn-success {
+    @include btn-theme($btn-color-success, $btn-color-success, $btn-color-secondary, $btn-color-success-hover, $btn-color-success-hover, $btn-color-secondary);
+}
+
+.btn-warning {
+    @include btn-theme($btn-color-warning, $btn-color-warning, $btn-color-secondary, $btn-color-warning-hover, $btn-color-warning-hover, $btn-color-secondary);
+}
+
+.btn-critical {
+     @include btn-theme($btn-color-critical, $btn-color-critical, $btn-color-secondary, $btn-color-critical-hover, $btn-color-critical-hover, $btn-color-secondary);
+}
+
+/********************/
+/*** BUTTON SIZES ***/
+/********************/
+
+.btn {
+  @include btn-size($btn-v-padding, $btn-h-padding, $btn-font-size, $btn-height);
+}
+
+.btn-large {
+  @include btn-size($btn-v-padding, $btn-h-padding, $btn-large-font-size, $btn-large-height);
+}
